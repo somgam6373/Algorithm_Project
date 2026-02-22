@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Algorithm Visualizer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="control-panel">
+        <h2>알고리즘 시각화</h2>
+
+        <label for="algorithmType">알고리즘 선택</label>
+        <select id="algorithmType" onchange="toggleInputMode()">
+            <option value="DFS" selected>DFS</option>
+            <option value="BFS">BFS</option>
+            <option value="BinarySearch">Binary Search</option>
+            <option value="BubbleSort">Bubble Sort</option>
+            <option value="QuickSort">Quick Sort</option>
+        </select>
+
+        <div id="graphControls">
+            <label>노드 개수</label>
+            <input type="number" id="nodeCount" value="8">
+
+            <label>시작 노드</label>
+            <input type="number" id="startNode" value="1">
+
+            <label>
+                <input type="checkbox" id="directed"> 방향 그래프
+            </label>
+
+            <label>간선 입력 (출발 도착)</label>
+            <textarea id="edges" rows="10">1 2
+1 3
+2 4
+2 5
+3 6
+5 6
+4 7
+6 8
+7 8
+3 4</textarea>
+        </div>
+
+        <div id="arrayControls" style="display:none;">
+            <label>배열 입력 (공백 구분)</label>
+            <input type="text" id="arrayInput" value="15 3 7 1 9 13 5 11">
+
+            <div id="searchInputGroup">
+                <label>탐색 값 (Target)</label>
+                <input type="number" id="searchTarget" value="7">
+                <p style="font-size: 11px; color: #666;">* 이진 탐색 시에는 정렬된 배열을 입력하세요.</p>
+            </div>
+        </div>
+
+        <button onclick="runAlgorithm()">실행</button>
+
+        <h3>실행 결과</h3>
+        <pre id="result">-</pre>
+    </div>
+
+    <div class="graph-panel">
+        <canvas id="graphCanvas" width="800" height="600"></canvas>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
