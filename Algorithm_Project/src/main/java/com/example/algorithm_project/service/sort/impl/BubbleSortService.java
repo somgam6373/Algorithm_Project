@@ -2,14 +2,20 @@ package com.example.algorithm_project.service.sort.impl;
 
 import com.example.algorithm_project.dto.request.SortRequestDto;
 import com.example.algorithm_project.dto.response.SortResponseDto;
+import com.example.algorithm_project.service.sort.SortService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class BubbleSortService {
+public class BubbleSortService implements SortInterface {
 
+    @Override
+    public String getType(){
+        return "BubbleSort";
+    }
+    @Override
     public SortResponseDto run(SortRequestDto request) {
         List<Integer> list = new ArrayList<>(request.getList());
         List<Integer> explore = new ArrayList<>();

@@ -6,8 +6,14 @@ import org.springframework.stereotype.Service;
 
 @Service
 
-public class QuickSortService {
+public class QuickSortService implements SortInterface{
 
+    @Override
+    public String getType(){
+        return "QuickSort";
+    }
+
+    @Override
     public SortResponseDto run(SortRequestDto request){
         return null;
     }

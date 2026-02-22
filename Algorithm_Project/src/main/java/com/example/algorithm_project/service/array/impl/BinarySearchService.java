@@ -8,7 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class BinarySearchService {
+public class BinarySearchService implements ArrayInterface{
+    @Override
+    public String getType(){
+        return "BinarySearch";
+    }
+
+    @Override
     public ArrayResponseDto run(ArrayRequestDto request) {
        List<Integer> list = request.getList();
        List<Integer> explore = new ArrayList<>();
